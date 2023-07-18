@@ -27,7 +27,9 @@ class FacilityFactory
 
   def format_facility_address(data)
     if data[:state] == "CO"
-      capitalize_string("#{data[:address_li]}#{" " + "#{data[:address__1]}" if data[:address__1] } #{data[:city]} #{data[:state]} #{data[:zip]}")  
+      #I know this line is a bit long!
+      #I wanted the format to match the rest of my code
+      capitalize_string("#{data[:address_li]}#{" " + "#{data[:address__1]}" if data[:address__1]} #{data[:city]} #{data[:state]} #{data[:zip]}")  
     elsif data[:state] == "NY"
       capitalize_string("#{data[:street_address_line_1]} #{data[:city]} #{data[:state]} #{data[:zip_code]}")
     else data[:state] == "MO"

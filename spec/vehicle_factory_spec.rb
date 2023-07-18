@@ -13,12 +13,9 @@ RSpec.describe VehicleFactory do
     it "can create new vehicles" do 
       factory_1 = VehicleFactory.new
       registrations = DmvDataService.new.wa_ev_registrations
-      #require 'pry';binding.pry
-      #creating variable and assigning it to expect will give return value and not create two separate arrays
-      # created_registrations = factory_1.create_vehicles(registrations)
       factory_1.create_vehicles(registrations)
       created_registrations = factory_1.created_vehicles
-
+      
       expect(created_registrations).to be_an Array
       expect(created_registrations.size).to eq(registrations.size) 
       expect(created_registrations).to all be_a Vehicle

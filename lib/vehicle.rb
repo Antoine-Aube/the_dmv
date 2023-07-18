@@ -6,7 +6,7 @@ class Vehicle
               :make,
               :model,
               :engine
-              # :registration_date
+
   attr_accessor :registration_date,
                 :plate_type
 
@@ -27,8 +27,4 @@ class Vehicle
   def electric_vehicle?
     @engine == :ev
   end
-
-  # def registration_date=(date)
-  #   @registration_date = date
-  # end
 end

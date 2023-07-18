@@ -21,4 +21,8 @@ class VehicleFactory
     end
     # @created_vehicles
   end
+
+  def popular_make_model
+    
+  end
 end
