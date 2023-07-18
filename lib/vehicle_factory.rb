@@ -16,7 +16,8 @@ class VehicleFactory
         year: dmv_data[:model_year],
         make: dmv_data[:make],
         model: dmv_data[:model],
-        engine: :ev
+        engine: :ev,
+        county: dmv_data[:county]
        })
     end
     # @created_vehicles
@@ -50,5 +51,19 @@ class VehicleFactory
       end
     end
     model_year_count
+  end
+
+  def most_popular_county(vehicle_list)
+    county_array = []
+    vehicle_list.each do |vehicle|
+       vehicle_county = "#{vehicle.county}"
+        county_array << vehicle_county
+    end 
+
+    most_popular_county_as_hash = county_array.group_by do |county|
+      county
+    end
+
+    most_popular = most_popular_county_as_hash.values.max_by(&:size).first
   end
 end
